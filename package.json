@@ -35,7 +35,8 @@
   },
   "scripts": {
     "test": "grunt test",
-    "postinstall": "bower install; grunt build"
+    "postinstall": "bower install; grunt build",
+    "start": "grunt serve"
   },
   "dependencies": {
     "bower": "^1.4.1",
