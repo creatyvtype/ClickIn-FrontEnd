@@ -1,24 +1,25 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/Users/alexheinen/.node/bin/npm', 'start' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
 2 info using npm@2.13.5
-3 info using node@v0.12.4
-4 verbose stack Error: missing script: start
-4 verbose stack     at run (/Users/alexheinen/.node/lib/node_modules/npm/lib/run-script.js:142:19)
-4 verbose stack     at /Users/alexheinen/.node/lib/node_modules/npm/lib/run-script.js:58:5
-4 verbose stack     at /Users/alexheinen/.node/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
-4 verbose stack     at checkBinReferences_ (/Users/alexheinen/.node/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
-4 verbose stack     at final (/Users/alexheinen/.node/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
-4 verbose stack     at then (/Users/alexheinen/.node/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
-4 verbose stack     at /Users/alexheinen/.node/lib/node_modules/npm/node_modules/read-package-json/read-json.js:300:12
-4 verbose stack     at evalmachine.<anonymous>:334:14
-4 verbose stack     at /Users/alexheinen/.node/lib/node_modules/npm/node_modules/read-package-json/node_modules/graceful-fs/graceful-fs.js:102:5
-4 verbose stack     at FSReqWrap.oncomplete (evalmachine.<anonymous>:95:15)
-5 verbose cwd /Users/alexheinen/Desktop/ClickIn-FrontEnd
-6 error Darwin 14.1.0
-7 error argv "node" "/Users/alexheinen/.node/bin/npm" "start"
-8 error node v0.12.4
-9 error npm  v2.13.5
-10 error missing script: start
-11 error If you need help, you may report this error at:
-11 error     <https://github.com/npm/npm/issues>
-12 verbose exit [ 1, true ]
+3 info using node@v0.12.2
+4 verbose node symlink /usr/local/bin/node
+5 verbose stack Error: missing script: start
+5 verbose stack     at run (/usr/local/lib/node_modules/npm/lib/run-script.js:142:19)
+5 verbose stack     at /usr/local/lib/node_modules/npm/lib/run-script.js:58:5
+5 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
+5 verbose stack     at checkBinReferences_ (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
+5 verbose stack     at final (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
+5 verbose stack     at then (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
+5 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:300:12
+5 verbose stack     at evalmachine.<anonymous>:334:14
+5 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/node_modules/graceful-fs/graceful-fs.js:102:5
+5 verbose stack     at FSReqWrap.oncomplete (evalmachine.<anonymous>:95:15)
+6 verbose cwd /Users/apprentice/Desktop/ClickIn-FrontEnd
+7 error Darwin 14.3.0
+8 error argv "node" "/usr/local/bin/npm" "start"
+9 error node v0.12.2
+10 error npm  v2.13.5
+11 error missing script: start
+12 error If you need help, you may report this error at:
+12 error     <https://github.com/npm/npm/issues>
+13 verbose exit [ 1, true ]
