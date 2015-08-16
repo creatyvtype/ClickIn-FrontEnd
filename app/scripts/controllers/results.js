@@ -21,25 +21,25 @@ angular.module('clickInFrontEndApp')
     //   }
     // )
 
-    var setChart = function(answers) {
+    var setChart = function(question, answers) {
       $scope.legend = true;
       $scope.labels = [];
       $scope.data = [];
       $scope.answers = answers;
-      console.log('myanswers', $scope.answers[0].count)
+      $scope.question = question;
       answers.forEach(function(answer) {
         $scope.labels.push(answer.content)
         $scope.data.push(answer.count)
       })
     }
 
-    setChart($scope.answers)
+    setChart($scope.question, $scope.answers)
 
     var socket = io("http://clickin-backend.herokuapp.com")
     socket.on('result', function(data){
       console.log("RECEIVED: ",data);
       $log.log(data.poll.answers)
-      setChart(data.poll.answers)
+      setChart(data.poll.question, data.poll.answers)
       $scope.$apply();
     })
 
