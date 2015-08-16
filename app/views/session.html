@@ -1,3 +1,7 @@
-<p>This is the session view.</p>
-<h3>Code: {{sessionCode}}</h3>
-<h3>Session: {{sessionResult.code}}</h3>
+<h3>Question: {{lecture.poll.question.content}}</h3>
+
+<div class="row">
+  <div ng-repeat="answer in lecture.poll.answers" class="col-xs-6">
+    <a href='#/results' class="btn btn-lg" ng-click="">{{answer.content}}</a>
+  </div>
+</div>
