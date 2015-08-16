@@ -35,10 +35,12 @@
   },
   "scripts": {
     "test": "grunt test",
-    "build": "grunt",
-    "start": "grunt serve"
+    "build": "node server.js",
+    "postinstall": "bash ./post_install.sh"
   },
   "dependencies": {
+    "bower": "^1.4.1",
+    "grunt": "^0.4.5",
     "grunt-heroku-deploy": "^0.1.1"
   }
 }
