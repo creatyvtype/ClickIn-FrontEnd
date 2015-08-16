@@ -1,10 +1,14 @@
-<h3>Question: {{question.content}}</h3>
+<div>
+  <h3>Question: {{question.content}}</h3>
+</div>
 <h4>Total Click-Ins: {{question.count}}</h4>
 
 <h3>Results</h3>
 <canvas id="pie" class="chart chart-pie" data="data"
   labels="labels"></canvas>
 <div ng-repeat="answer in answers">
-  <h4>{{answer.content}}</h4>
-  <h4>Count: {{answer.count}}</h4>
+  <ul>
+    <li class="collection-item dismissable"><div>{{answer.content}}<i class="secondary-content"><i class="material-icons">{{answer.count}}</i></i></div></li>
+  </ul>
 </div>
+

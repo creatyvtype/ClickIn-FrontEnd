@@ -1,10 +1,11 @@
 <div class="container">
-  <h2>Welcome</h2>
   <div class="form-group">
-    <h4>Enter a Session Code</h4>
-    <input type="text" ng-model="sessionCode" class="form-control">
+    <h4>Enter a Code</h4>
+    <input type="text" ng-model="sessionCode" class="form-control" placeholder="Session Name">
     <h4>Email</h4>
-    <input type="text" ng-model="email" class="form-control"><br>
-    <a href='#/session' class="btn btn-primary" ng-click="update(sessionCode, email)">Submit</a>
+    <input type="text" ng-model="email" class="form-control" placeholder="Email"><br>
+    <div class="center-btn">
+      <a href='#/session' class="btn btn-primary" ng-click="update(sessionCode, email)">Start Session</a>
+    </div>
   </div>
 </div>
