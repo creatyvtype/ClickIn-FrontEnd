@@ -196,7 +196,7 @@ angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/session.html',
-    "<h3>Question: {{question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in answers\" class=\"col-xs-6\"> <a href=\"#/results\" class=\"btn btn-lg\" ng-click=\"clickin(answer)\">{{answer.content}}</a> </div> </div>"
+    "<h3>Question: {{question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in answers\" class=\"col-xs-6\"> <a href=\"#/results\" class=\"btn btn-lg\" ng-touch=\"clickin(answer)\" ng-click=\"clickin(answer)\">{{answer.content}}</a> </div> </div>"
   );
 
 }]);
