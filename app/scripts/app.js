@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+ debugger
 angular
   .module('clickInFrontEndApp', [
     'ngAnimate',
