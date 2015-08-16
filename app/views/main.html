@@ -2,9 +2,9 @@
   <h2>Welcome</h2>
   <div class="form-group">
     <h4>Enter a Session Code</h4>
-    <input type="text" ng-model="session" class="form-control">
+    <input type="text" ng-model="sessionCode" class="form-control">
     <h4>Email</h4>
     <input type="text" ng-model="email" class="form-control"><br>
-    <input type="submit" ng-click="update(session, email)">
+    <a href='#/session' class="btn btn-primary" ng-click="update(sessionCode, email)">Submit</a>
   </div>
 </div>

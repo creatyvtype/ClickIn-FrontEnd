@@ -1,7 +1,7 @@
 # click-in-front-end
 
 ##ANGULAR SETUP
-(Majd and Ilka)
+(Majd)
 -Started with Angular-Seed
   -ran the expected code from angular-seed repo
   -had issues understanding its structure and manipulation of index

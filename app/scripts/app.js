@@ -25,6 +25,11 @@ angular
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
+      .when('/session', {
+        templateUrl: 'views/session.html',
+        controller: 'SessionCtrl',
+        controllerAs: 'session'
+      })
       .otherwise({
         redirectTo: '/'
       });
