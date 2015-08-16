@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name clickInFrontEndApp.controller:SessionCtrl
+ * @name clickInFrontEndApp.controller:ResultsCtrl
  * @description
- * # SessionCtrl
+ * # ResultsCtrl
  * Controller of the clickInFrontEndApp
  */
 angular.module('clickInFrontEndApp')
-  .controller('SessionCtrl', function ($scope, $http, $resource, $routeParams, $log, sessionService) {
+  .controller('ResultsCtrl', function ($scope, $resource, $log, sessionService) {
     $scope.sessionCode = sessionService.code
     $scope.sessionCall = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
       {session_code: sessionService.code}

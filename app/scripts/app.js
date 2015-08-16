@@ -8,7 +8,6 @@
  *
  * Main module of the application.
  */
- debugger
 angular
   .module('clickInFrontEndApp', [
     'ngAnimate',
@@ -29,6 +28,11 @@ angular
         templateUrl: 'views/session.html',
         controller: 'SessionCtrl',
         controllerAs: 'session'
+      })
+      .when('/results', {
+        templateUrl: 'views/results.html',
+        controller: 'ResultsCtrl',
+        controllerAs: 'results'
       })
       .otherwise({
         redirectTo: '/'

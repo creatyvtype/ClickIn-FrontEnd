@@ -9,5 +9,5 @@
  */
 angular.module('clickInFrontEndApp')
   .service('sessionService', function () {
-    this.code = "WOOF";
+    this.code = "BARK";
   });

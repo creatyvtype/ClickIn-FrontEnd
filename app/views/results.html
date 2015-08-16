@@ -1,0 +1,8 @@
+<h3>Question: {{lecture.poll.question.content}}</h3>
+<h4>Total Click-Ins: {{lecture.poll.question.count}}</h4>
+
+<h3>Results</h3>
+<div ng-repeat="answer in lecture.poll.answers">
+  <h4>{{answer.content}}</h4>
+  <h4>Count: {{answer.count}}</h4>
+</div>
