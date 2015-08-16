@@ -14,6 +14,7 @@ angular.module('clickInFrontEndApp')
 
     $scope.$watch('sessionCode', function(){
       sessionService.code = $scope.sessionCode;
+      console.log(sessionService.code)
     })
 
     $scope.update = function(sessionInput, emailInput) {

@@ -11,7 +11,14 @@ angular.module('clickInFrontEndApp')
   .controller('SessionCtrl', function ($scope, $location, $resource, $log, sessionService) {
     $scope.sessionCode = sessionService.code
 
-    sessionService.Lecture.get().$promise.then(function(response){
+    var getSession = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
+      {session_code: sessionService.code},
+      {
+        pupdate:{method: 'PATCH'}
+      }
+    )
+
+    getSession.get().$promise.then(function(response){
       $scope.question = response.poll.question
       $scope.answers = response.poll.answers
       sessionService.question = response.poll.question
@@ -20,7 +27,7 @@ angular.module('clickInFrontEndApp')
 
     $scope.clickin = function(selection) {
       $log.log("selected answer: ", selection)
-      sessionService.lecture = sessionService.Lecture.pupdate(selection).$promise.then(function(response){
+      sessionService.lecture = getSession.pupdate(selection).$promise.then(function(response){
         sessionService.question = response.poll.question;
         sessionService.answers = response.poll.answers;
       })

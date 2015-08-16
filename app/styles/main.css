@@ -9,6 +9,10 @@ body {
   padding: 0;
 }
 
+.text-center{
+  text-align: center;
+}
+
 .answer-wrapper{
   padding-top: 1em;
   padding-bottom: 1em;
