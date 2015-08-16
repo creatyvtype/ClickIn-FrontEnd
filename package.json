@@ -35,8 +35,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "build": "node server.js",
-    "start": "web.js",
     "postinstall": "bower install; grunt build"
   },
   "dependencies": {
