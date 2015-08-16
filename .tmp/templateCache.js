@@ -7,7 +7,7 @@ angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/results.html',
-    "<h3>Question: {{question.content}}</h3> <h4>Total Click-Ins: {{question.count}}</h4> <h3>Results</h3> <div ng-repeat=\"answer in answers\"> <h4>{{answer.content}}</h4> <h4>Count: {{answer.count}}</h4> </div>"
+    "<h3>Question: {{question.content}}</h3> <h4>Total Click-Ins: {{question.count}}</h4> <h3>Results</h3> <canvas id=\"pie\" class=\"chart chart-pie\" data=\"data\" labels=\"labels\"></canvas> <div ng-repeat=\"answer in answers\"> <h4>{{answer.content}}</h4> <h4>Count: {{answer.count}}</h4> </div>"
   );
 
 
