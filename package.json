@@ -34,9 +34,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test",
-    "postinstall": "bower install; grunt build",
-    "start": "grunt serve"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
     "bower": "^1.4.1",
