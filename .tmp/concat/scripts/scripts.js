@@ -50,7 +50,7 @@ angular
  * Controller of the clickInFrontEndApp
  */
 angular.module('clickInFrontEndApp')
-  .controller('MainCtrl', ["$scope", "$log", "sessionService", function ($scope, $log, sessionService) {
+  .controller('MainCtrl', ["$scope", "$log", "$location", "sessionService", function ($scope, $log, $location, sessionService) {
     $scope.sessionCode = sessionService.code
     $scope.email = 'example@email.com'
 
@@ -63,6 +63,7 @@ angular.module('clickInFrontEndApp')
       sessionService.code = sessionInput;
       $scope.email = emailInput;
       $log.log("Session Code: ", $scope.sessionCode, "Service Code: ", sessionService.code, "Email: ", $scope.email);
+      $location.path('/session')
     }
     this.awesomeThings = [
       'HTML5 Boilerplate',
@@ -98,6 +99,7 @@ angular.module('clickInFrontEndApp')
         sessionService.question = response.poll.question;
         sessionService.answers = response.poll.answers;
       })
+      $location.path('/results')
     }
     this.awesomeThings = [
       'HTML5 Boilerplate',
@@ -186,7 +188,7 @@ angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCa
   'use strict';
 
   $templateCache.put('views/main.html',
-    "<div class=\"container\"> <h2>Welcome</h2> <div class=\"form-group\"> <h4>Enter a Session Code</h4> <input type=\"text\" ng-model=\"sessionCode\" class=\"form-control\"> <h4>Email</h4> <input type=\"text\" ng-model=\"email\" class=\"form-control\"><br> <a href=\"#/session\" class=\"btn btn-primary\" ng-touch=\"update(sessionCode, email)\" ng-click=\"update(sessionCode, email)\">Submit</a> </div> </div>"
+    "<div class=\"container\"> <h2>Welcome</h2> <div class=\"form-group\"> <h4>Enter a Session Code</h4> <input type=\"text\" ng-model=\"sessionCode\" class=\"form-control\"> <h4>Email</h4> <input type=\"text\" ng-model=\"email\" class=\"form-control\"><br> <div class=\"btn btn-primary\" ng-click=\"update(sessionCode, email)\">Submit</div> </div> </div>"
   );
 
 
@@ -196,7 +198,7 @@ angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/session.html',
-    "<h3>Question: {{question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in answers\" class=\"col-xs-6\"> <a href=\"#/results\" class=\"btn btn-lg\" ng-touch=\"clickin(answer)\" ng-click=\"clickin(answer)\">{{answer.content}}</a> </div> </div>"
+    "<h3>{{question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in answers\" class=\"col-xs-6\"> <div class=\"btn btn-lg\" ng-click=\"clickin(answer)\">{{answer.content}}</div> </div> </div>"
   );
 
 }]);
