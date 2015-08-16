@@ -462,5 +462,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.loadNpmTasks('grunt-heroku-deploy');
 };
