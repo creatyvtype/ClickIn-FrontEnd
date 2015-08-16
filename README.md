@@ -7,6 +7,7 @@
   -had issues understanding its structure and manipulation of index
 -Switched to Yeoman for seed
   npm install -g yo bower grunt-cli gulp
+  AND bower install
   -ran (npm install -g generator-webapp) BUT this is for a generic app, NOT an Angular app
   -ran (npm install -g generator-angular)
   -make a folder with the app name
