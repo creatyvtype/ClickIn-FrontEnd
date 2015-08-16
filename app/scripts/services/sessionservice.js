@@ -8,6 +8,16 @@
  * Service in the clickInFrontEndApp.
  */
 angular.module('clickInFrontEndApp')
-  .service('sessionService', function () {
+  .service('sessionService', function ($resource) {
     this.code = "BARK";
+
+    this.Lecture = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
+      {session_code: this.code},
+      {
+        pupdate:{method: 'PATCH'}
+      }
+    )
+    this.question = {};
+    this.answers = [];
+
   });
