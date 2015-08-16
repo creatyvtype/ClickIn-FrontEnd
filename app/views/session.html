@@ -1,7 +1,7 @@
-<h3>Question: {{lecture.poll.question.content}}</h3>
+<h3>Question: {{question.content}}</h3>
 
 <div class="row">
-  <div ng-repeat="answer in lecture.poll.answers" class="col-xs-6">
-    <a href='#/results' class="btn btn-lg" ng-click="">{{answer.content}}</a>
+  <div ng-repeat="answer in answers" class="col-xs-6">
+    <a href='#/results' class="btn btn-lg" ng-click="clickin(answer)">{{answer.content}}</a>
   </div>
 </div>
