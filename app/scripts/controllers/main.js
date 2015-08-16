@@ -22,3 +22,4 @@ angular.module('clickInFrontEndApp')
       'Karma'
     ];
   });
+
