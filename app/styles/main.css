@@ -9,6 +9,14 @@ body {
   padding: 0;
 }
 
+.answer-wrapper{
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.answer-button{
+  width: 100%;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
