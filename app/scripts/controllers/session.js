@@ -9,6 +9,7 @@
  */
 angular.module('clickInFrontEndApp')
   .controller('SessionCtrl', function ($scope, $location, $resource, $log, sessionService) {
+    if (sessionService.code.length === 0 ) {$location.path('/');}
     $scope.sessionCode = sessionService.code
 
     var getSession = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',

@@ -10,11 +10,10 @@
 angular.module('clickInFrontEndApp')
   .controller('MainCtrl', function ($scope, $log, $location, sessionService) {
     $scope.sessionCode = sessionService.code
-    $scope.email = 'example@email.com'
+    $scope.email = ''
 
     $scope.$watch('sessionCode', function(){
       sessionService.code = $scope.sessionCode;
-      console.log(sessionService.code)
     })
 
     $scope.update = function(sessionInput, emailInput) {

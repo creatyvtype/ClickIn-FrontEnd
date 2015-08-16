@@ -8,23 +8,18 @@
  * Controller of the clickInFrontEndApp
  */
 angular.module('clickInFrontEndApp')
-  .controller('ResultsCtrl', function ($scope, $resource, $log, sessionService) {
+  .controller('ResultsCtrl', function ($scope, $resource, $log, $location,sessionService) {
+    if (sessionService.code.length === 0 ) {$location.path('/');}
     $scope.sessionCode = sessionService.code
     $log.log("SESSION LECTURE: ", sessionService.answers)
     $scope.question = sessionService.question
     $scope.answers = sessionService.answers
 
-    // $scope.$watch(function(scope){return scope.answers},
-    //   function(newValue, oldValue) {
-    //     $scope.answers = newValue
-    //     newValue.forEach(function(answer))
-    //   }
-    // )
-
     var setChart = function(question, answers) {
       $scope.legend = true;
       $scope.labels = [];
       $scope.data = [];
+      // $scope.colors = ['red']
       $scope.answers = answers;
       $scope.question = question;
       answers.forEach(function(answer) {
