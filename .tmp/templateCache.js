@@ -7,12 +7,12 @@ angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCa
 
 
   $templateCache.put('views/results.html',
-    "<h3>Question: {{lecture.poll.question.content}}</h3> <h4>Total Click-Ins: {{lecture.poll.question.count}}</h4> <h3>Results</h3> <div ng-repeat=\"answer in lecture.poll.answers\"> <h4>{{answer.content}}</h4> <h4>Count: {{answer.count}}</h4> </div>"
+    "<h3>Question: {{question.content}}</h3> <h4>Total Click-Ins: {{question.count}}</h4> <h3>Results</h3> <div ng-repeat=\"answer in answers\"> <h4>{{answer.content}}</h4> <h4>Count: {{answer.count}}</h4> </div>"
   );
 
 
   $templateCache.put('views/session.html',
-    "<h3>Question: {{lecture.poll.question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in lecture.poll.answers\" class=\"col-xs-6\"> <a href=\"#/results\" class=\"btn btn-lg\" ng-click=\"\">{{answer.content}}</a> </div> </div>"
+    "<h3>Question: {{question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in answers\" class=\"col-xs-6\"> <a href=\"#/results\" class=\"btn btn-lg\" ng-click=\"clickin(answer)\">{{answer.content}}</a> </div> </div>"
   );
 
 }]);
