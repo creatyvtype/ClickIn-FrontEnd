@@ -8,7 +8,7 @@
  * Controller of the clickInFrontEndApp
  */
 angular.module('clickInFrontEndApp')
-  .controller('MainCtrl', function ($scope, $log, sessionService) {
+  .controller('MainCtrl', function ($scope, $log, $location, sessionService) {
     $scope.sessionCode = sessionService.code
     $scope.email = 'example@email.com'
 
@@ -21,6 +21,7 @@ angular.module('clickInFrontEndApp')
       sessionService.code = sessionInput;
       $scope.email = emailInput;
       $log.log("Session Code: ", $scope.sessionCode, "Service Code: ", sessionService.code, "Email: ", $scope.email);
+      $location.path('/session')
     }
     this.awesomeThings = [
       'HTML5 Boilerplate',
