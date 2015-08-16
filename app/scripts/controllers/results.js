@@ -22,6 +22,7 @@ angular.module('clickInFrontEndApp')
     // )
 
     var setChart = function(answers) {
+      $scope.legend = true;
       $scope.labels = [];
       $scope.data = [];
       $scope.answers = answers;
