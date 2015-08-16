@@ -8,13 +8,23 @@
  * Controller of the clickInFrontEndApp
  */
 angular.module('clickInFrontEndApp')
-  .controller('SessionCtrl', function ($scope, $http, $resource, $routeParams, $log, sessionService) {
+  .controller('SessionCtrl', function ($scope, $location, $resource, $log, sessionService) {
     $scope.sessionCode = sessionService.code
-    $scope.sessionCall = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
-      {session_code: sessionService.code}
-    )
-    $scope.lecture = $scope.sessionCall.get()
-    $log.log("response: ",$scope.lecture)
+
+    sessionService.Lecture.get().$promise.then(function(response){
+      $scope.question = response.poll.question
+      $scope.answers = response.poll.answers
+      sessionService.question = response.poll.question
+      sessionService.answers = response.poll.answers
+    })
+
+    $scope.clickin = function(selection) {
+      $log.log("selected answer: ", selection)
+      sessionService.lecture = sessionService.Lecture.pupdate(selection).$promise.then(function(response){
+        sessionService.question = response.poll.question;
+        sessionService.answers = response.poll.answers;
+      })
+    }
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

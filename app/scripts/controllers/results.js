@@ -10,11 +10,16 @@
 angular.module('clickInFrontEndApp')
   .controller('ResultsCtrl', function ($scope, $resource, $log, sessionService) {
     $scope.sessionCode = sessionService.code
-    $scope.sessionCall = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
-      {session_code: sessionService.code}
-    )
-    $scope.lecture = $scope.sessionCall.get()
-    $log.log("response: ",$scope.lecture)
+    $log.log("SESSION LECTURE: ", sessionService.answers)
+    $scope.question = sessionService.question
+    $scope.answers = sessionService.answers
+
+    var socket = io("http://clickin-backend.herokuapp.com")
+    socket.on('news', function(data){
+      console.log("RECEIVED: ",data);
+
+    })
+
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
