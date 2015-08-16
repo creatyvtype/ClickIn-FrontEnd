@@ -24,6 +24,7 @@ angular.module('clickInFrontEndApp')
         sessionService.question = response.poll.question;
         sessionService.answers = response.poll.answers;
       })
+      $location.path('/results')
     }
     this.awesomeThings = [
       'HTML5 Boilerplate',
