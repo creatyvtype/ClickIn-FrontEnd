@@ -37,6 +37,7 @@
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "dependencies": {
+    "angular": "^1.4.4",
     "bower": "^1.4.1",
     "express": "^4.13.3",
     "express-resource": "^1.0.0",
