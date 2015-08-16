@@ -8,7 +8,6 @@
  *
  * Main module of the application.
  */
- debugger
 angular
   .module('clickInFrontEndApp', [
     'ngAnimate',
@@ -29,6 +28,11 @@ angular
         templateUrl: 'views/session.html',
         controller: 'SessionCtrl',
         controllerAs: 'session'
+      })
+      .when('/results', {
+        templateUrl: 'views/results.html',
+        controller: 'ResultsCtrl',
+        controllerAs: 'results'
       })
       .otherwise({
         redirectTo: '/'
@@ -79,12 +83,11 @@ angular.module('clickInFrontEndApp')
 angular.module('clickInFrontEndApp')
   .controller('SessionCtrl', ["$scope", "$http", "$resource", "$routeParams", "$log", "sessionService", function ($scope, $http, $resource, $routeParams, $log, sessionService) {
     $scope.sessionCode = sessionService.code
-    $log.log("code: ", sessionService.code)
     $scope.sessionCall = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
       {session_code: sessionService.code}
     )
-    $scope.sessionResult = $scope.sessionCall.get()
-    $log.log("response: ",$scope.sessionResult)
+    $scope.lecture = $scope.sessionCall.get()
+    $log.log("response: ",$scope.lecture)
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -103,8 +106,32 @@ angular.module('clickInFrontEndApp')
  */
 angular.module('clickInFrontEndApp')
   .service('sessionService', function () {
-    this.code = "WOOF";
+    this.code = "BARK";
   });
+
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name clickInFrontEndApp.controller:ResultsCtrl
+ * @description
+ * # ResultsCtrl
+ * Controller of the clickInFrontEndApp
+ */
+angular.module('clickInFrontEndApp')
+  .controller('ResultsCtrl', ["$scope", "$resource", "$log", "sessionService", function ($scope, $resource, $log, sessionService) {
+    $scope.sessionCode = sessionService.code
+    $scope.sessionCall = $resource('http://clickin-backend.herokuapp.com/api/sessions/:session_code',
+      {session_code: sessionService.code}
+    )
+    $scope.lecture = $scope.sessionCall.get()
+    $log.log("response: ",$scope.lecture)
+    this.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  }]);
 
 angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCache) {
   'use strict';
@@ -114,8 +141,13 @@ angular.module('clickInFrontEndApp').run(['$templateCache', function($templateCa
   );
 
 
+  $templateCache.put('views/results.html',
+    "<h3>Question: {{lecture.poll.question.content}}</h3> <h4>Total Click-Ins: {{lecture.poll.question.count}}</h4> <h3>Results</h3> <div ng-repeat=\"answer in lecture.poll.answers\"> <h4>{{answer.content}}</h4> <h4>Count: {{answer.count}}</h4> </div>"
+  );
+
+
   $templateCache.put('views/session.html',
-    "<p>This is the session view.</p> <h3>Code: {{sessionCode}}</h3> <h3>Session: {{sessionResult.code}}</h3>"
+    "<h3>Question: {{lecture.poll.question.content}}</h3> <div class=\"row\"> <div ng-repeat=\"answer in lecture.poll.answers\" class=\"col-xs-6\"> <a href=\"#/results\" class=\"btn btn-lg\" ng-click=\"\">{{answer.content}}</a> </div> </div>"
   );
 
 }]);
