@@ -34,7 +34,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt"
   },
   "dependencies": {
     "grunt-heroku-deploy": "^0.1.1"
