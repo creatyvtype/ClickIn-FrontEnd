@@ -36,7 +36,7 @@
   "scripts": {
     "test": "grunt test",
     "build": "node server.js",
-    "postinstall": "grunt serve"
+    "postinstall": "grunt"
   },
   "dependencies": {
     "bower": "^1.4.1",
