@@ -3,7 +3,7 @@ git <div class="text-center"><h3>{{question.content}}</h3></div>
 <div class="row">
   <div class="col s12">
     <div ng-repeat="answer in answers" class="answer-wrapper">
-      <a href='#/results' class="btn btn-lg answer-button" ng-click="clickin(answer)" ng-touch="clickin(answer)">{{answer.content}}</a>
+      <div class="btn btn-lg answer-button" ng-click="clickin(answer)">{{answer.content}}</div>
     </div>
   </div>
 </div>
