@@ -20,6 +20,7 @@ angular.module('clickInFrontEndApp')
     )
 
     getSession.get().$promise.then(function(response){
+      if (response.poll === undefined) {$location.path('/');}
       $scope.question = response.poll.question
       $scope.answers = response.poll.answers
       sessionService.question = response.poll.question
