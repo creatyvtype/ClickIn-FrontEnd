@@ -35,6 +35,11 @@ angular
         controller: 'ResultsCtrl',
         controllerAs: 'results'
       })
+      .when('/sessions/new', {
+        templateUrl: 'views/sessions/new.html',
+        controller: 'SessionsNewCtrl',
+        controllerAs: 'sessions/new'
+      })
       .otherwise({
         redirectTo: '/'
       });
